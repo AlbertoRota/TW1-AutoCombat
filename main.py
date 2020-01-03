@@ -1,6 +1,9 @@
 # Standard library imports
+import time
+from statistics import mean
 from time import sleep
 from itertools import cycle
+import json
 
 # Third party imports
 import pyautogui
@@ -26,10 +29,21 @@ def on_press(key):
         key_pressed = True  # Flip global flag
 
 
+def elapsed(ref, timeout):
+    return time.perf_counter() - ref > timeout
+
+
 def main():
+    # Variable declaration and initialization
     global end_program, key_pressed
     mode_cycle = cycle(['sleepMode', 'combatMode', 'lootMode'])
     current_mode = next(mode_cycle)
+    with open('main/resources/templates/config.json') as f:
+        cfg = json.load(f)
+        loot_poi = cfg['lootPoi']
+        loot_click = (mean([loot_poi[0][0], loot_poi[1][0]]), mean([loot_poi[0][1], loot_poi[1][1]]))
+    last_gather = time.perf_counter()
+    last_loot = time.perf_counter()
 
     # Initialize keyboard listener on a separate thread
     keyboard.Listener(on_press=on_press).start()
@@ -51,16 +65,18 @@ def main():
         # Main decision tree
         if current_mode == 'combatMode':
             # Combat mode
-            img = w_mgr.get_mouse_area()
+            img = w_mgr.get_combat_area()
             if im.is_combat_combo(img) or im.is_start_combat(img):
                 pyautogui.click(pyautogui.position())
                 sleep(1)
         elif current_mode == 'lootMode':
             # Gather mode
-            img = w_mgr.get_mouse_area()
-            if im.is_gather(img):
+            if elapsed(last_gather, 0.5) and im.is_gather(w_mgr.get_gather_area()):
                 pyautogui.click(pyautogui.position())
-                sleep(1)
+                last_gather = time.perf_counter()
+            elif elapsed(last_loot, 0.5) and im.is_loot(w_mgr.get_loot_area()):
+                pyautogui.click(loot_click)
+                last_loot = time.perf_counter()
         elif current_mode == 'sleepMode':
             # Sleep mode
             sleep(0.1)

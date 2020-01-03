@@ -11,6 +11,10 @@ class ImageMatcher:
         self._gather_template = cv.imread(path_to_resources + '/gather_template.png', cv.IMREAD_COLOR)
         self._gather_mask = cv.imread(path_to_resources + '/gather_mask.png', cv.IMREAD_COLOR)
 
+        # Read the "loot" template and its mask
+        self._loot_template = cv.imread(path_to_resources + '/loot_template.png', cv.IMREAD_COLOR)
+        self._loot_mask = cv.imread(path_to_resources + '/loot_mask.png', cv.IMREAD_COLOR)
+
         # Read the "combatCombo" template and its mask
         self._combat_combo_template = cv.imread(path_to_resources + '/combatCombo_template.png', cv.IMREAD_COLOR)
         self._combat_combo_mask = cv.imread(path_to_resources + '/combatCombo_mask.png', cv.IMREAD_COLOR)
@@ -26,6 +30,15 @@ class ImageMatcher:
             self._gather_template,
             cv.TM_SQDIFF,
             mask=self._gather_mask
+        ).min() < threshold
+
+    def is_loot(self, image, threshold=0.1):
+        """Returns True if the image contains the "Loot" icon, False otherwise."""
+        return cv.matchTemplate(
+            image,
+            self._loot_template,
+            cv.TM_SQDIFF,
+            mask=self._loot_mask
         ).min() < threshold
 
     def is_combat_combo(self, image, threshold=4):
