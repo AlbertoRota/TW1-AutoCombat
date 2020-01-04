@@ -22,7 +22,7 @@ key_pressed = False
 def on_press(key):
     global end_program, key_pressed
 
-    if key == keyboard.Key.esc:
+    if key == keyboard.Key.shift_r:
         end_program = True  # Flip global flag
         return False  # Stop listener
     elif key == keyboard.Key.tab:
