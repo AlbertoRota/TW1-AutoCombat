@@ -66,7 +66,7 @@ def main():
         if current_mode == 'combatMode':
             # Combat mode
             img = w_mgr.get_combat_area()
-            if im.is_combat_combo(img) or im.is_start_combat(img):
+            if im.is_combat(img):
                 pyautogui.click(pyautogui.position())
                 sleep(1)
         elif current_mode == 'lootMode':

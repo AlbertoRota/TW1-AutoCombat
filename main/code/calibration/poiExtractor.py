@@ -2,6 +2,7 @@
 import os
 import random
 from math import ceil, floor
+from sys import maxsize
 
 # Third party imports
 import numpy as np
@@ -58,3 +59,15 @@ class PoiExtractor:
                 # Get rid of fill
                 for p in ph:
                     p.remove()
+
+    @staticmethod
+    def merge_pois(pois_to_merge):
+        """Merges several POIs into a single one containing all of them"""
+        out_tl = (maxsize, maxsize)
+        out_br = (0, 0)
+
+        for poi_tl, poi_br in pois_to_merge:
+            out_tl = min(out_tl[0], poi_tl[0]), min(out_tl[1], poi_tl[1])
+            out_br = max(out_br[0], poi_br[0]), max(out_br[1], poi_br[1])
+
+        return out_tl, out_br
