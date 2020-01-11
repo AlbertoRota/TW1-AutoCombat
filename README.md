@@ -1,13 +1,27 @@
 # TW1 - AutoCombat
 _An easy to use script to ease combat in "The Witcher" PC game._
 
-## How to use it:
+## Pre-requisites
+1. This script will only work on **Windows** machines
+2. Require you to have **Python** installed on your PC or laptop.
+3. Also you will obviously need **The Witcher** PC game (The first one.)
+4. Before using it for the first time, you need to follow the steps explained in the **How to set it up** section.
+
+## How to use it
+To use it, just run `main.py` (Double click it) and **The Witcher** PC game.
+
+Once you have them running, pressing the <kbd>⇥</kbd> key will cycle across the available modes:
+* Sleep mode:
+   * Initial mode, the script is waiting and not doing anything.
+* Combat mode:
+   * Just by looking to an enemy, the script will engage in combat and do all the combos for you.
+   * **Remember:** Choose the correct weapon/style for each enemy.
+* Loot mode:
+   * Just by looking to a lootable, the script will go to it and picl all the items it contains.
+
+## How to set it up
 ### Introduction:
 Using this script is very easy, but requires some set-up and config in order to properly work on your side.
-
-This script will only work on **Windows** machines, and require you to have **Python** installed on your PC or laptop.
-
-Also you will obviously need **The Witcher** PC game (The first one.)
 
 ### Step 1: Gather all the required images.
 Every screen is different, that's why the first step is to gather several screenshots taken in the PC or laptop where you are going to be playing.
@@ -43,6 +57,9 @@ Replace the contents of the following folders with the images you have obtained 
 * `main/resources/calibration/gather` -> Gather resource
 * `main/resources/calibration/loot` -> Looting menu
 
-**NOTE:** Remember to delete all the old images of that folders and take extra care of putting all the images in the correcto folder.
+**NOTE:** Remember to delete all the old images of that folders and take extra care of putting all the images in the correct folder.
 
 Once you have done it, just run `main_calibration.py` and follow the on-screen instructions.
+
+### Step 3: Use the script.
+**Remember:** You don't need to do steps 1 and 2 again, you can directly run ``
