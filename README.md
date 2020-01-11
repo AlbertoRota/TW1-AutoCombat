@@ -2,10 +2,11 @@
 _An easy to use script to ease combat in "The Witcher" PC game._
 
 ## Pre-requisites
-1. This script will only work on **Windows** machines
-2. Require you to have **Python** installed on your PC or laptop.
+1. This script will only work on **Windows** machines.
+2. Require you to have **Python 3** installed on your PC or laptop.
 3. Also you will obviously need **The Witcher** PC game (The first one.)
-4. Before using it for the first time, you need to follow the steps explained in the **How to set it up** section.
+4. This script only works in the **Over the shoulder** camera mode.
+5. Before using it for the first time, you need to follow the steps explained in the **How to set it up** section.
 
 ## How to use it
 To use it, just run `main.py` (Double click it) and **The Witcher** PC game.
@@ -60,6 +61,3 @@ Replace the contents of the following folders with the images you have obtained 
 **NOTE:** Remember to delete all the old images of that folders and take extra care of putting all the images in the correct folder.
 
 Once you have done it, just run `main_calibration.py` and follow the on-screen instructions.
-
-### Step 3: Use the script.
-**Remember:** You don't need to do steps 1 and 2 again, you can directly run ``
