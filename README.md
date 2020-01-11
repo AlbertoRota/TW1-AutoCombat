@@ -31,7 +31,7 @@ To do it, run `main_screenshot.py` and start **The Witcher** PC game.
 
 While `main_screenshot.py` is running, every time you press the <kbd>⇥</kbd> key, a new screenshot will be saved to the folder `main/resources/calibration`.
 
-You will need screenshots of the following situations:
+You will need screenshots of the following situations (4 to 6 for each situation):
 
 * Start attack with the steel sword
     * See examples in `main/resources/calibration/startCombat`
