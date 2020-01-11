@@ -32,3 +32,17 @@ You will need screenshots of the following situations:
     * See examples in `main/resources/calibration/loot`
 
 Once you have all the images, you can stop `main_screenshot.py` either by closing it or pressing the right <kbd>⇧</kbd> key.
+
+### Step 2: Process all the required images.
+Replace the contents of the following folders with the images you have obtained in the previous step:
+
+* `main/resources/calibration/startCombat` -> Start attack with the steel sword
+* `main/resources/calibration/combatCombo` -> Combo attack with the steel sword
+* `main/resources/calibration/startCombatSilver` -> Start attack with the silver sword
+* `main/resources/calibration/combatComboSilver` -> Combo attack with the silver sword
+* `main/resources/calibration/gather` -> Gather resource
+* `main/resources/calibration/loot` -> Looting menu
+
+**NOTE:** Remember to delete all the old images of that folders and take extra care of putting all the images in the correcto folder.
+
+Once you have done it, just run `main_calibration.py` and follow the on-screen instructions.
