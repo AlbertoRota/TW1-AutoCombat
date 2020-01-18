@@ -4,9 +4,10 @@ _An easy to use script to ease combat in "The Witcher" PC game._
 ## Pre-requisites
 1. This script will only work on **Windows** machines.
 2. Require you to have **Python 3** installed on your PC or laptop.
-3. Also you will obviously need **The Witcher** PC game (The first one.)
-4. This script only works in the **Over the shoulder** camera mode.
-5. Before using it for the first time, you need to follow the steps explained in the **How to set it up** section.
+3. Require you to install all the **required modules** (Run `pip install -r requirements.txt`)
+4. Also you will obviously need **The Witcher** PC game (The first one.)
+5. This script only works in the **Over the shoulder** camera mode.
+6. Before using it for the first time, you need to follow the steps explained in the **How to set it up** section.
 
 ## How to use it
 To use it, just run `main.py` (Double click it) and **The Witcher** PC game.
