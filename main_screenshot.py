@@ -11,7 +11,7 @@ end_program = False
 
 
 def on_press(key):
-    """Pressing "Right Sifht" will stop the program, "Tab" will take an snapshot."""
+    """Pressing "Right Sift" will stop the program, "Tab" will take an snapshot."""
     global end_program
     if key == keyboard.Key.shift_r:
         end_program = True
